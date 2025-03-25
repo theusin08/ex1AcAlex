@@ -11,7 +11,7 @@ export class HomePage {
   constructor() {}
   valorConta = 0;
   valorRange = 0;
-  valorFinal = 0;
+  valorFinal = 10;
   alertButtons = ['OK'];
 
 
