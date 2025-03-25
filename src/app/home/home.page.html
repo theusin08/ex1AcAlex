@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h1>EX 1</h1>
+    <h2>Crie um ion-range para permitir que o usuário escolha a porcentagem de
+      gorjeta entre 0% e 30% através do ion-range</h2>
+    <ion-alert
+      trigger="dispara-alert"
+      header="Valor Final"
+      message="R$ {{valorFinal}}"
+      [buttons]="alertButtons"
+    ></ion-alert>
+
+    <ion-label>Valor da Conta</ion-label>
+    <ion-input
+      [(ngModel)]="valorConta"
+      type="number"
+      placeholder="Digite o valor"
+    ></ion-input>
+    <h2>Porcentagem de gorjeta</h2>
+    <ion-range (ionChange)="onIonChange($event)" [min]="0" [max]="30">
+      <ion-icon slot="start" name="remove-circle-outline"></ion-icon>
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+    </ion-range>
+    <ion-label>{{valorRange}}</ion-label>
+    <ion-button expand="full" id="dispara-alert" (click)="fazerCalculo()"
+      >Finalizar</ion-button>
   </div>
 </ion-content>
